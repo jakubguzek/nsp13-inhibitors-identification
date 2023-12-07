@@ -1,6 +1,5 @@
 """script for fetching data from ChEMBL."""
 import sys
-import pprint
 from typing import Any, List, Optional
 
 import requests
