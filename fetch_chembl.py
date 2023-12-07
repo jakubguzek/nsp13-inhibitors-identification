@@ -65,7 +65,7 @@ def get_asssays() -> pd.DataFrame:
 
 
 def main() -> int:
-    print(get_asssays())
+    print(get_asssays().to_csv())
     return 0
 
 
