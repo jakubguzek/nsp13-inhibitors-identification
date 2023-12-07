@@ -22,7 +22,7 @@ def next_page(response_body: dict[str, Any]) -> Optional[str]:
 
 
 def get_viruses_ids(batch_size: int = 500) -> List[str | int]:
-    url = fetch_url("organism", limit=500, l1="Viruses")
+    url = fetch_url("organism", limit=f"{batch_size}", l1="Viruses")
     ids = []
     response = requests.get(url)
     if response.ok:
