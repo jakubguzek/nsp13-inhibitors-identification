@@ -4,5 +4,5 @@ Project Repository.
 
 ## Planned pipeline
 
-![](presentations/figures/pipeline.png)
+![](presentations/figures/pipeline_bg.png)
 
