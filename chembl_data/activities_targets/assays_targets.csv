@@ -1,0 +1,153 @@
+assay_id,assay_description,document_chembl_id,target_chembl_id,n_compounds
+CHEMBL1614220,"PUBCHEM_BIOASSAY: Fluorescence-based biochemical high throughput dose response assay for inhibitors of the Hepatitis C Virus non-structural protein 3 helicase (NS3). (Class of assay: confirmatory) [Related pubchem assays: 1830 (Summary AID.), 1800 (Primary screen (NS3 inhibitors).), 1943 (Confirmation screen (NS3 inhibitors).)]",CHEMBL1201862,CHEMBL1293269,125
+CHEMBL2060535,Inhibition of HCV NS3 helicase overexpressed in Escherichia coli BL21(DE3) assessed as inhibition of DNA unwinding activity at 10 uM by FRET assay,CHEMBL2057104,CHEMBL612545,62
+CHEMBL2060534,Inhibition of SARS coronavirus nsP13 helicase activity expressed in Escherichia coli Rosetta assessed inhibition of DNA unwinding activity at 10 uM by FRET assay,CHEMBL2057104,CHEMBL612545,62
+CHEMBL2060537,Inhibition of HCV NS3 helicase ATP hydrolysis activity overexpressed in Escherichia coli BL21(DE3) assessed as inhibition of inorganic phosphate release by AM/MG-based colometric analysis in the presence of M13 ssDNA,CHEMBL2057104,CHEMBL612545,62
+CHEMBL4042368,Inhibition of HCV NS3 helicase DNA unwinding activity using fluorescent DNA substrate by molecular beacon assay,CHEMBL4041513,CHEMBL612545,60
+CHEMBL3870401,Inhibition of Hepatitis C virus genotype 1b (con1) full length C-terminal His-tagged NS3 helicase expressed in Escherichia coli Rosette(DE3) assessed as inhibition of 5'-Cy5/3'-IAbRQ-labeled DNA unwinding activity by molecular beacon assay,CHEMBL3870302,CHEMBL612545,43
+CHEMBL4428655,Inhibition of helicase activity of JC polyomavirus LTAg (E264 to D628 residues) expressed in Escherichia coli using Cy5/BHQ3 dsDNA pre-incubated for 20 mins and measured after 120 to 180 mins by fluorescence based assay,CHEMBL4428043,CHEMBL4523163,35
+CHEMBL4428657,Inhibition of helicase activity of BK polyomavirus LTAg (E265 to D629 residues) expressed in Escherichia coli using Cy5/BHQ3 dsDNA pre-incubated for 20 mins and measured after 120 to 180 mins by fluorescence based assay,CHEMBL4428043,CHEMBL612545,34
+CHEMBL3122911,Inhibition of HCV H genotype 1a N-terminal hexa-histidine-tagged NS3 helicase expressed in Escherichia coli BL21(DE3) using DNA oligonucleotide duplex as substrate after 1 hr by unwinding assay,CHEMBL3120058,CHEMBL612545,18
+CHEMBL1816593,Inhibition of helicase/NTPase activity of full-length HCV genotype 1a NS3 protease by FRET assay,CHEMBL1811822,CHEMBL612545,16
+CHEMBL1772276,Competitive inhibition of Hepatitis C virus NS3 helicase,CHEMBL1770144,CHEMBL612545,14
+CHEMBL832708,Inhibitory concentration against hepatitis C virus helicase,CHEMBL1145280,CHEMBL1293269,13
+CHEMBL996802,Inhibition of HCV NS3 helicase activity by fluorimetric assay,CHEMBL1152218,CHEMBL612545,13
+CHEMBL857450,Inhibition against DNA-Dependent ATPase activity of HSV-1 helicase-primase in HSV-1-infected CV-1 cells,CHEMBL1128737,CHEMBL4380,13
+CHEMBL695718,Inhibitory activity against hepatitis C virus helicase at 25 ug/mL,CHEMBL1134109,CHEMBL1293269,12
+CHEMBL4004009,Inhibition of Hepatitis C virus genotype 1b NS3 helicase unwinding activity using fluorescent DNA substrate by molecular beacon assay,CHEMBL4002613,CHEMBL612545,12
+CHEMBL1252592,Inhibition of HCV NS3 helicase,CHEMBL1250429,CHEMBL612545,11
+CHEMBL1057306,Inhibition of SARS coronavirus helicase assessed as duplex-DNA unwinding by FRET based assay,CHEMBL1153502,CHEMBL5118,11
+CHEMBL1055727,Inhibition of ATPase activity of SARS coronavirus helicase assessed as phosphate release by malachite green assay,CHEMBL1153502,CHEMBL5118,11
+CHEMBL1912635,Inhibition of helicase activity of SCV NTPase/helicase assessed as inhibition of ds-DNA unwinding after 5 mins by FRET assay,CHEMBL1909523,CHEMBL612545,10
+CHEMBL1912633,Inhibition of NTPase activity of SCV NTPase/helicase after 5 mins by FRET assay,CHEMBL1909523,CHEMBL612545,10
+CHEMBL3870404,Inhibition of Cy5-labeled dT15 DNA binding to Hepatitis C virus genotype 1b (con1) NS3 helicase DNA by fluorescence polarization assay,CHEMBL3870302,CHEMBL612545,10
+CHEMBL3870403,Inhibition of protease domain lacking Hepatitis C virus genotype 1b (con1) C-terminal His-tagged NS3 helicase ATP hydrolysis activity using ATP as substrate preincubated followed by substrate addition measured after 15 mins in absence of poly U RNA by malachite green-based assay,CHEMBL3870302,CHEMBL612545,10
+CHEMBL3870402,Inhibition of protease domain lacking Hepatitis C virus genotype 1b (con1) C-terminal His-tagged NS3 helicase ATP hydrolysis activity using ATP as substrate preincubated followed by substrate addition measured after 15 mins in presence of poly U RNA by malachite green-based assay,CHEMBL3870302,CHEMBL612545,10
+CHEMBL1827371,Inhibition of recombinant hepatitis C virus NS3 helicase domain using DNA duplex SM2 labelled with [gamma-32P]ATP as substrate after 30 mins,CHEMBL1821570,CHEMBL612545,9
+CHEMBL1827370,Inhibition of recombinant hepatitis C virus NS3 helicase domain using RNA duplex rSM2 labelled with [gamma-32P]ATP as substrate after 30 mins,CHEMBL1821570,CHEMBL612545,9
+CHEMBL3119165,Inhibition of helicase activity of HCV NTPase/helicase using radio-labelled double-stranded DNA as substrate up to 300 ug/ml after 30 mins,CHEMBL3112456,CHEMBL612545,9
+CHEMBL3119166,Inhibition of helicase activity of HCV NTPase/helicase using radio-labelled double-stranded RNA as substrate up to 300 ug/ml after 30 mins,CHEMBL3112456,CHEMBL612545,9
+CHEMBL1826761,Inhibition of recombinant hepatitis C virus NS3 helicase domain NTPase activity by TLC,CHEMBL1821570,CHEMBL612545,9
+CHEMBL964113,Inhibition of SCV helicase assessed as duplex-DNA unwinding by FRET based assay,CHEMBL1153308,CHEMBL5118,8
+CHEMBL964112,Inhibition of ATPase activity of SCV helicase assessed as phosphate release by colorimetric assay,CHEMBL1153308,CHEMBL5118,8
+CHEMBL689340,Inhibition against DNA-Dependent GTPase activity of HSV-1 helicase-primase in HSV-1-infected CV-1 cells,CHEMBL1128737,CHEMBL4380,8
+CHEMBL689341,Inhibition against the primase activity of HSV-1 helicase-primase at a concentration 200 micro/mL,CHEMBL1128737,CHEMBL4380,8
+CHEMBL1827375,Inhibition of recombinant hepatitis C virus NS3 helicase domain using DNA duplex SM1 labelled with [gamma-32P]ATP as substrate after 30 mins,CHEMBL1821570,CHEMBL612545,7
+CHEMBL3106651,Inhibition of Japanese encephalitis virus helicase,CHEMBL3102775,CHEMBL612545,7
+CHEMBL1827374,Inhibition of recombinant hepatitis C virus NS3 helicase domain using DNA duplex S(DB2)a labelled with [gamma-32P]ATP as substrate after 30 mins,CHEMBL1821570,CHEMBL612545,7
+CHEMBL1827376,Inhibition of recombinant hepatitis C virus NS3 helicase domain using DNA duplex S1 labelled with [gamma-32P]ATP as substrate after 30 mins,CHEMBL1821570,CHEMBL612545,7
+CHEMBL2013323,Inhibition of Hepatitis C virus NS3 helicase expressed in Escherichia coli assessed as conversion of a 6-FAM-labeled double stranded RNA in to single stranded nucleic acid by laser scanning densitometric analysis,CHEMBL2010683,CHEMBL612545,7
+CHEMBL3106647,Inhibition of HCV ATPase activity of NS3 NTPase/helicase domain expressed in Escherichia coli BL21 after 30 mins by thin layer chromatography in presence of [gamma-32P]ATP,CHEMBL3102775,CHEMBL612545,7
+CHEMBL3106648,Inhibition of HCV NS3 NTPase/helicase domain expressed in Escherichia coli BL21 using dsRNA as substrate assessed as strand separation of [32P]-labeled oligonucleotides after 30 mins by SDS-gel electrophoresis,CHEMBL3102775,CHEMBL612545,7
+CHEMBL1827372,Inhibition of recombinant hepatitis C virus NS3 helicase domain using DNA duplex S(DB11) labelled with [gamma-32P]ATP as substrate after 30 mins,CHEMBL1821570,CHEMBL612545,7
+CHEMBL3106650,Inhibition of Dengue virus helicase,CHEMBL3102775,CHEMBL612545,7
+CHEMBL3106649,Inhibition of HCV NS3 NTPase/helicase domain expressed in Escherichia coli BL21 using dsDNA as substrate assessed as strand separation of [32P]-labeled oligonucleotides after 30 mins by SDS-gel electrophoresis,CHEMBL3102775,CHEMBL612545,7
+CHEMBL1827373,Inhibition of recombinant hepatitis C virus NS3 helicase domain using DNA duplex S(DB2)b labelled with [gamma-32P]ATP as substrate after 30 mins,CHEMBL1821570,CHEMBL612545,7
+CHEMBL970624,Inhibition of HCV NS3/4A helicase at 100 uM by FRET assay,CHEMBL1138524,CHEMBL612545,6
+CHEMBL4014234,Inhibition of 5-FAM peptide binding to Hepatitis C virus full length NS3/4A helicase after 30 mins by FRET assay,CHEMBL4011661,CHEMBL612545,6
+CHEMBL4373305,Inhibition of recombinant full length HCV genotype 1b NS3 helicase activity assessed as reduction in 5'-FAM labeled dsDNA substrate unwinding preincubated for 10 mins followed by MgCl2/ATP addition and measured after 30 mins by real-time fluorescence assay,CHEMBL4371078,CHEMBL612545,6
+CHEMBL970622,Inhibition of ATPase activity of HCV NS3/4A helicase by autoradiography,CHEMBL1138524,CHEMBL612545,6
+CHEMBL970623,Inhibition of HCV NS3/4A helicase by FRET assay,CHEMBL1138524,CHEMBL612545,6
+CHEMBL4373304,Inhibition of recombinant full length HCV genotype 1b NS3 helicase activity assessed as reduction in 5'-FAM labeled dsDNA substrate unwinding at 30 uM preincubated for 10 mins followed by MgCl2/ATP addition and measured after 30 mins by real-time fluorescence assay,CHEMBL4371078,CHEMBL612545,5
+CHEMBL5135910,"Inhibition of SARS-CoV-2 nsp13 helicase-associated activity using 5'- AGT CTT CTC CTG GTG CTC GAA CAG TGA CCy3-3', 5'- BHQ-2-GTC ACT GTT CGA GCA CCA CCT CTT CTG A-3' DNA as substrate preincubated for 10 mins followed by substrate addition and measured after 15 mins in the presence of ATP by fluorescent-based helicase unwind assay",CHEMBL5131518,CHEMBL4523582,5
+CHEMBL3418064,Inhibition of HCV Con1 genotype 1b C-terminal His-tagged NS3 helicase lacking N-terminal protease using fluorescent DNA as substrate at 500 uM,CHEMBL3414521,CHEMBL612545,5
+CHEMBL3418065,Inhibition of HCV Con1 genotype 1b C-terminal His-tagged NS3 helicase lacking N-terminal protease using ATP/RNA as substrate after 15 mins by malachite green-based assy,CHEMBL3414521,CHEMBL612545,5
+CHEMBL4042370,Inhibition of HCV NS3 helicase ATP hydrolysis activity in presence of poly(U) RNA,CHEMBL4041513,CHEMBL612545,4
+CHEMBL970625,Inhibition of HCV NS3/4A helicase assessed as blockade of dsRNA binding to enzyme by gel mobility shift assay,CHEMBL1138524,CHEMBL612545,4
+CHEMBL4723176,Inhibition of SARS Coronavirus helicase pp1ab domain assessed as reduction in helicase activity using DT20Cy3/Release BHQ oligomers by FRET-based assay,CHEMBL4715853,CHEMBL612545,4
+CHEMBL4723175,Inhibition of SARS Coronavirus helicase pp1ab domain assessed as reduction in ATPase activity by phosphomolybdate-malachite green assay,CHEMBL4715853,CHEMBL612545,4
+CHEMBL970626,Inhibition of HCV NS3/4A helicase assessed as blockade of ssRNA formation form dsRNA at 100 uM by PAGE,CHEMBL1138524,CHEMBL612545,4
+CHEMBL4042369,Inhibition of DNA oligonucleotide binding to HCV NS3 helicase,CHEMBL4041513,CHEMBL612545,4
+CHEMBL4373308,Inhibition of recombinant full length HCV genotype 1b NS3 helicase activity assessed as reduction in radiolabeled 38 bp dsRNA substrate unwinding t 25 uM preincubated for 20 mins followed by MgCl2/ATP addition and measured up to 4 mins by PAGE based phosphor imaging analysis relative to control,CHEMBL4371078,CHEMBL612545,3
+CHEMBL4373307,Inhibition of recombinant full length HCV genotype 1b NS3 helicase activity assessed as reduction in radiolabeled 38 bp dsRNA substrate unwinding by measuring unwinding rate constant at 25 uM preincubated for 20 mins followed by MgCl2/ATP addition and measured up to 4 mins by PAGE based phosphor imaging analysis (Rvb = 1.84 +/- 0.19 /min),CHEMBL4371078,CHEMBL612545,3
+CHEMBL4373306,Inhibition of recombinant full length HCV genotype 1b NS3 helicase activity assessed as reduction in radiolabeled dsDNA substrate unwinding by measuring unwinding rate constant at 25 uM preincubated for 5 mins followed by MgCl2/ATP addition and measured up to 50 mins by PAGE based phosphor imaging analysis (Rvb = 0.039 +/- 0.002 /min),CHEMBL4371078,CHEMBL612545,3
+CHEMBL5138459,Inhibition of Hepatitis C virus NS3 helicase measured by DNA unwinding based assay,CHEMBL5137003,CHEMBL612545,3
+CHEMBL1110698,Inhibition of HCV NS3 helicase in presence of 2.5 mM ATP,CHEMBL1156199,CHEMBL612545,3
+CHEMBL5098106,Inhibition of Hepatitis C virus NS3 helicase measured by fluorescence helicase assay,CHEMBL5096190,CHEMBL612545,3
+CHEMBL1110697,Inhibition of HCV NS3 helicase in presence of 1.5 mM ATP,CHEMBL1156199,CHEMBL612545,3
+CHEMBL1110696,Inhibition of HCV NS3 helicase in presence of 0.5 mM ATP,CHEMBL1156199,CHEMBL612545,3
+CHEMBL1827368,Inhibition of recombinant hepatitis C virus NS3 helicase domain using DNA duplex SM1 labelled with [gamma-32P]ATP as substrate up to 400 after 30 mins,CHEMBL1821570,CHEMBL612545,2
+CHEMBL3119158,Inhibition of NTPase activity of HCV NTPase/helicase using 1 x 10'-5 M gamma-[32P]ATP as substrate up to 0.7 mM after 30 mins,CHEMBL3112456,CHEMBL612545,2
+CHEMBL1110693,Binding affinity to HCV NS3 helicase assessed as inhibition of ethidium bromide DNA intercalation by gel migration retardation assay,CHEMBL1156199,CHEMBL345,2
+CHEMBL1827369,Inhibition of recombinant hepatitis C virus NS3 helicase domain using DNA duplex S1 labelled with [gamma-32P]ATP as substrate up to 400 after 30 mins,CHEMBL1821570,CHEMBL612545,2
+CHEMBL996804,Inhibition of HCV NS3 helicase activity in presence of increasing concentration of double stranded DNA substrate at 5 uM,CHEMBL1152218,CHEMBL612545,2
+CHEMBL3119159,Inhibition of NTPase activity of HCV NTPase/helicase using 105 microM gamma-[32P]ATP as substrate up to 0.7 mM after 30 mins,CHEMBL3112456,CHEMBL612545,2
+CHEMBL4723177,Inhibition of SARS Coronavirus helicase expressed in Escherichia coli assessed as reduction in ATP hydrolysis preincubated for 5 mins followed by ATP and circular ssDNA M13 addition and measured after 10 mins by malachite green and ammonium molybdate reagent based assay,CHEMBL4715853,CHEMBL612545,2
+CHEMBL3119163,Inhibition of helicase activity of HCV NTPase/helicase using radio-labelled double-stranded RNA as substrate after 30 mins,CHEMBL3112456,CHEMBL612545,2
+CHEMBL3119164,Inhibition of helicase activity of HCV NTPase/helicase using radio-labelled double-stranded DNA as substrate after 30 mins,CHEMBL3112456,CHEMBL612545,2
+CHEMBL830537,Percent inhibition against hepatitis C virus helicase at 25 ug/mL; Range 6-13,CHEMBL1145280,CHEMBL1293269,2
+CHEMBL830668,Percent inhibition against hepatitis C virus helicase at 25 ug/mL,CHEMBL1145280,CHEMBL1293269,2
+CHEMBL5135911,"Inhibition of SARS-CoV-2 nsp13 helicase-associated activity using 5'- AGT CTT CTC CTG GTG CTC GAA CAG TGA CCy3-3', 5'- BHQ-2-GTC ACT GTT CGA GCA CCA CCT CTT CTG A-3' DNA as substrate at highest concentration of compound preincubated for 10 mins followed by substrate addition and measured after 15 mins in the presence of ATP by fluorescent-based helicase unwind assay",CHEMBL5131518,CHEMBL4523582,2
+CHEMBL4723178,Inhibition of SARS Coronavirus helicase expressed in Escherichia coli assessed as reduction in dsDNA unwinding activity by FRET assay,CHEMBL4715853,CHEMBL612545,2
+CHEMBL3738580,Inhibition of HCV helicase,CHEMBL3734667,CHEMBL612545,2
+CHEMBL690907,Inhibition against Primase by coupled primase-DNA polymerase-I assay with the two subunit recombinant HSV-1 helicase primase,CHEMBL1128737,CHEMBL4380,2
+CHEMBL1826843,Enhancement of binding efficacy between compound-treated recombinant hepatitis C virus NS3 helicase and 32P-labelled SM1 DNA duplex after 10 mins,CHEMBL1821570,CHEMBL612545,2
+CHEMBL936940,Inhibition of NS3-associated HCV viral helicase activity using RNA substrate,CHEMBL1145498,CHEMBL612545,2
+CHEMBL1827367,Inhibition of recombinant hepatitis C virus NS3 helicase domain using DNA duplex S(DB2)a labelled with [gamma-32P]ATP as substrate up to 400 after 30 mins,CHEMBL1821570,CHEMBL612545,2
+CHEMBL1827366,Inhibition of recombinant hepatitis C virus NS3 helicase domain using DNA duplex S(DB2)b labelled with [gamma-32P]ATP as substrate up to 400 after 30 mins,CHEMBL1821570,CHEMBL612545,2
+CHEMBL1826845,Inhibition of recombinant hepatitis C virus NS3 helicase domain by PTI spectrofluorimetry,CHEMBL1821570,CHEMBL612545,2
+CHEMBL1826844,Inhibition of recombinant hepatitis C virus NS3 helicase domain assessed as the enzyme concentration at which a half of compound molecules are bound by PTI spectrofluorimetry,CHEMBL1821570,CHEMBL612545,2
+CHEMBL1826846,Inhibition of recombinant hepatitis C virus NS3 helicase domain using DNA duplex S(DB11) labelled with [gamma-32P]ATP as substrate up to 400 after 30 mins,CHEMBL1821570,CHEMBL612545,2
+CHEMBL1826759,Inhibition of recombinant hepatitis C virus NS3 helicase domain NTPase activity at 400 uM by TLC in presence of poly(U),CHEMBL1821570,CHEMBL612545,2
+CHEMBL1826760,Inhibition of recombinant hepatitis C virus NS3 helicase domain NTPase activity by TLC in presence of poly(U),CHEMBL1821570,CHEMBL612545,2
+CHEMBL4042371,Inhibition of HCV NS3 helicase ATP hydrolysis activity at 1 mM in absence of poly(U) RNA,CHEMBL4041513,CHEMBL612545,1
+CHEMBL4431498,Inhibition of RNA unwinding activity of thioredoxin/His6 tagged Dengue virus 2 TSV01 NS3 helicase (171 to 618 residues) expressed in Escherichia coli Rosetta (DE3) using Cy5-MBHA as substrate by fluorescence assay,CHEMBL4431301,CHEMBL5980,1
+CHEMBL5138458,Inhibition of Cy5-dT15 ssDNA to Hepatitis C virus subtype 1b (Con1) NS3 helicase measured by fluorescence polarization (FP) based ssDNA binding assay,CHEMBL5137003,CHEMBL612545,1
+CHEMBL4723460,Inhibition of SARS-CoV wild type NSP13 helicase using Cy3-labeled 31/18-mer as substrate measured after 10 min by FRET-based assay,CHEMBL4715856,CHEMBL612545,1
+CHEMBL4431644,Non-competitive inhibition of Dengue virus 4 NS3 helicase,CHEMBL4431301,CHEMBL5980,1
+CHEMBL828559,Inhibitory concentration against hepatitis C virus helicase; range 0.6-0.7,CHEMBL1145280,CHEMBL1293269,1
+CHEMBL695720,Binding affinity for human papillomavirus (HPV6) E1 helicase,CHEMBL1139458,CHEMBL4953,1
+CHEMBL4004010,Inhibition of Hepatitis C virus genotype 1b Con1 NS3 helicase ATP hydrolysis activity using ATP as substrate in presence of poly U RNA,CHEMBL4002613,CHEMBL612545,1
+CHEMBL4723461,Inhibition of SARS-CoV NSP13 helicase Y277A mutant using Cy3-labeled 31/18-mer as substrate measured after 10 min by FRET-based assay,CHEMBL4715856,CHEMBL612545,1
+CHEMBL854378,Inhibition of HCV NS3 helicase,CHEMBL1148590,CHEMBL1293269,1
+CHEMBL4042372,Binding affinity to HCV genotype 2A JFH1 protease domain truncated NS3 helicase by fluorescence assay,CHEMBL4041513,CHEMBL612545,1
+CHEMBL695117,Inhibitory concentration against herpes simplex virus helicase primase 8 (HSV),CHEMBL1139458,CHEMBL4380,1
+CHEMBL4723486,Inhibition of SARS-CoV NSP13 helicase in presence of DT20Cy3 and ReleaseBHQ by FRET-based assay,CHEMBL4715856,CHEMBL612545,1
+CHEMBL4431528,Inhibition of Dengue virus 2 NS3 helicase incubated for 2 mins followed by ATP addition,CHEMBL4431301,CHEMBL5980,1
+CHEMBL4708240,Inhibition of 2C ATPase helicase activity in Enterovirus A71 infected in human RD cells measured by gel electrophoresis method,CHEMBL4706500,CHEMBL612545,1
+CHEMBL4723485,Inhibition of SARS-CoV NSP13 helicase K508A mutant using Cy3-labeled 31/18-mer as substrate measured after 10 min by FRET-based assay,CHEMBL4715856,CHEMBL612545,1
+CHEMBL4723484,Inhibition of SARS-CoV NSP13 helicase using fluorescein and black hole quencher labelled dsDNA as substrate measured after 10 min by FRET-based assay,CHEMBL4715856,CHEMBL612545,1
+CHEMBL4723462,Inhibition of MERS-CoV NSP13 helicase measured after 5 min by FRET-based assay,CHEMBL4715856,CHEMBL612545,1
+CHEMBL4431527,Non-competitive inhibition of Dengue virus 3 NS3 helicase,CHEMBL4431301,CHEMBL5980,1
+CHEMBL4042373,Selectivity ratio of inhibition of DNA oligonucleotide binding to HCV NS3 helicase to inhibition of HCV NS3 helicase ATP hydrolysis activity,CHEMBL4041513,CHEMBL612545,1
+CHEMBL996805,Inhibition of HCV NS3 helicase activity in presence of increasing concentration of double stranded DNA substrate at 33 uM,CHEMBL1152218,CHEMBL612545,1
+CHEMBL3866399,Inhibition of HCV genotype 1b Con1 C-terminal truncated and C-terminal His-tagged NS3 helicase assessed as reduction in ATP hydrolysis using fluorescent DNA substrate,CHEMBL3865803,CHEMBL612545,1
+CHEMBL868182,Inhibition of HCV helicase,CHEMBL1147722,CHEMBL1293269,1
+CHEMBL1772277,Competitive inhibition of Hepatitis C virus NS3 helicase using nucleic acid as substrate,CHEMBL1770144,CHEMBL612545,1
+CHEMBL936942,Inhibition of NS3-associated WNV helicase activity using DNA substrate,CHEMBL1145498,CHEMBL612545,1
+CHEMBL936943,Inhibition of NS3-associated WNV helicase activity using RNA substrate,CHEMBL1145498,CHEMBL612545,1
+CHEMBL1252595,Inhibition of HCV genotype 3a NS3 helicase,CHEMBL1250429,CHEMBL612545,1
+CHEMBL1252594,Inhibition of HCV genotype 1a NS3 helicase,CHEMBL1250429,CHEMBL612545,1
+CHEMBL1252593,Inhibition of HCV genotype 1B NS3 helicase,CHEMBL1250429,CHEMBL379,1
+CHEMBL930246,Binding affinity to HPV transcription factor E2 assessed as inhibition of transcription factor E2-viral helicase E1 interaction,CHEMBL1142223,CHEMBL612545,1
+CHEMBL1110699,Binding affinity to HCV NS3 helicase assessed as inhibition of ethidium bromide DNA intercalation at 100 uM by gel migration retardation assay,CHEMBL1156199,CHEMBL345,1
+CHEMBL1110695,Inhibition of HCV 3a NS3 helicase by fluorimetry,CHEMBL1156199,CHEMBL612545,1
+CHEMBL1041203,Inhibition of Dengue virus NS3 helicase at 100 uM,CHEMBL1155220,CHEMBL612545,1
+CHEMBL1041202,Inhibition of Dengue virus NS3 helicase,CHEMBL1155220,CHEMBL612545,1
+CHEMBL996803,Inhibition of HCV NS3 helicase activity in presence of increasing concentration of double stranded DNA substrate at 10 uM,CHEMBL1152218,CHEMBL612545,1
+CHEMBL1025484,Inhibition of HCV recombinant NS3 helicase,CHEMBL1136909,CHEMBL612545,1
+CHEMBL1025485,Inhibition of HCV recombinant NS3 helicase at 100 uM,CHEMBL1136909,CHEMBL612545,1
+CHEMBL1007078,Inhibition of HCV NS3 helicase expressed in Escherichia coli,CHEMBL1138495,CHEMBL612545,1
+CHEMBL995081,Inhibition of HCV NS3 ATPase/helicase upto 100 uM,CHEMBL1142494,CHEMBL612545,1
+CHEMBL954381,Inhibition of helicase activity of HCV NS3/4A protease up to 10 uM,CHEMBL1153285,CHEMBL612545,1
+CHEMBL936941,Inhibition of NS3-associated HCV helicase activity using DNA substrate,CHEMBL1145498,CHEMBL612545,1
+CHEMBL886528,Inhibition of helicase activity of Dengue virus NTPase/helicase expressed in Escherichia coli using RNA substrate,CHEMBL1139146,CHEMBL612545,1
+CHEMBL886527,Inhibition of helicase activity of Japanese encephalitis virus NTPase/helicase expressed in Escherichia coli using RNA substrate,CHEMBL1139146,CHEMBL612545,1
+CHEMBL996806,Inhibition of HCV NS3 helicase activity in presence of increasing ATP concentration,CHEMBL1152218,CHEMBL612545,1
+CHEMBL3122909,Binding affinity to HCV H genotype 1a N-terminal hexa-histidine-tagged NS3 helicase expressed in Escherichia coli BL21(DE3) by isothermal titration calorimetry,CHEMBL3120058,CHEMBL612545,1
+CHEMBL3122908,Binding affinity to HCV H genotype 1a N-terminal hexa-histidine-tagged NS3 helicase expressed in Escherichia coli BL21(DE3) in ITC/NMR buffer at pH 7.5 by circular dichroism assay,CHEMBL3120058,CHEMBL612545,1
+CHEMBL3122907,Binding affinity to HCV H genotype 1a N-terminal hexa-histidine-tagged NS3 helicase expressed in Escherichia coli BL21(DE3) at pH 6.5 by circular dichroism assay,CHEMBL3120058,CHEMBL612545,1
+CHEMBL3122906,Binding affinity to HCV H genotype 1a N-terminal hexa-histidine-tagged NS3 helicase expressed in Escherichia coli BL21(DE3) assessed as resonance peak1 by STD NMR spectroscopic analysis,CHEMBL3120058,CHEMBL612545,1
+CHEMBL3122588,Binding affinity to HCV H genotype 1a N-terminal hexa-histidine-tagged NS3 helicase expressed in Escherichia coli BL21(DE3) assessed as resonance peak2 by STD NMR spectroscopic analysis,CHEMBL3120058,CHEMBL612545,1
+CHEMBL886521,Inhibition of helicase activity of West Nile virus NTPase/helicase expressed in Vero E6 cells using DNA substrate,CHEMBL1139146,CHEMBL612545,1
+CHEMBL886522,Inhibition of helicase activity of Hepatitis C virus NTPase/helicase expressed in Escherichia coli using DNA substrate,CHEMBL1139146,CHEMBL612545,1
+CHEMBL2400394,Inhibition of HCV helicase up to 10000 nM,CHEMBL2396606,CHEMBL612545,1
+CHEMBL886526,Inhibition of helicase activity of Hepatitis C virus NTPase/helicase expressed in Escherichia coli using RNA substrate,CHEMBL1139146,CHEMBL612545,1
+CHEMBL886523,Inhibition of helicase activity of Japanese encephalitis virus NTPase/helicase expressed in Escherichia coli using DNA substrate,CHEMBL1139146,CHEMBL612545,1
+CHEMBL886524,Inhibition of helicase activity of Dengue virus NTPase/helicase expressed in Escherichia coli using DNA substrate,CHEMBL1139146,CHEMBL612545,1
+CHEMBL886525,Inhibition of helicase activity of West Nile virus NTPase/helicase expressed in Vero E6 cells using RNA substrate,CHEMBL1139146,CHEMBL612545,1
+CHEMBL2043712,Binding affinity to HCV NS3 helicase assessed as increase in fluorescence after 15 mins by isothermal denaturation assay,CHEMBL2040706,CHEMBL612545,1
+CHEMBL2043705,Inhibition of HCV NS3 RNA helicase activity using [32P]-dsRNA as substrate measured every 5 secs for 5 mins and every 30 secs up to 30 mins by photoinduced electron transfer-based fluorescence assay,CHEMBL2040706,CHEMBL612545,1
+CHEMBL2043706,Inhibition of HCV NS3 RNA helicase activity using [32Pgamma]-labelled partial duplex RNA as substrate incubated for 15 mins prior to ATP addition measured after 30 mins by PAGE analysis,CHEMBL2040706,CHEMBL612545,1
+CHEMBL1944232,Inhibition of HCV helicase up to 1 mM,CHEMBL1938259,CHEMBL612545,1
+CHEMBL3094684,Inhibition of HCV NS3 helicase,CHEMBL3091412,CHEMBL612545,1
