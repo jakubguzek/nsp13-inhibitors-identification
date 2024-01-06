@@ -7,6 +7,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
 from score_metrics import rmse, spearman, mcc, multiclass_mcc
+from sklearn.svm import SVR
 
 
 def get_features_df(activities_file, compound_ft_file, target_ft_file=None):
@@ -28,7 +29,7 @@ def get_features_df(activities_file, compound_ft_file, target_ft_file=None):
     return features
 
 
-def PCM_model(input):
+def PCM_model(input, model):
     y = input["standard_value"]
     X_train, X_test, y_train, y_test = train_test_split(
         input, y, test_size=0.3, random_state=0)
@@ -43,10 +44,8 @@ def PCM_model(input):
         X_train[prot_cols] = scaler.fit_transform(X_train[prot_cols])
         X_test[prot_cols] = scaler.transform(X_test[prot_cols])
 
-    reg = RandomForestRegressor(
-        n_estimators=100, max_features=0.3, random_state=0)
-    reg.fit(X_train, y_train)
-    test_pred = reg.predict(X_test)
+    model.fit(X_train, y_train)
+    test_pred = model.predict(X_test)
     res["predicted"] = test_pred
 
     med_cor_test_pred = test_pred + np.median(y_train) - np.median(test_pred)
@@ -68,9 +67,16 @@ if __name__ == "__main__":
     target_ft_file = "subset_assay_id_embedding.csv"
 
     input = get_features_df(activities_file, compound_ft_file, target_ft_file)
-    model_with_scores = PCM_model(input)
-    model_with_scores[0].to_csv("model_out.tsv", sep="\t", index=False)
 
     scores = ["rmse", "med_cor_rmse", "spearman",
               "mcc", "med_cor_mcc", "multiclass_mcc"]
+
+    model = RandomForestRegressor(n_estimators=100, max_features=0.3, random_state=0)
+    model_with_scores = PCM_model(input, model)
+    model_with_scores[0].to_csv("RF_model_out.tsv", sep="\t", index=False)
+    print(*zip(scores, model_with_scores[1:]))
+
+    model = SVR()
+    model_with_scores = PCM_model(input, model)
+    model_with_scores[0].to_csv("SVR_model_out.tsv", sep="\t", index=False)
     print(*zip(scores, model_with_scores[1:]))
