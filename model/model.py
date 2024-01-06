@@ -22,11 +22,6 @@ def get_features_df(activities_file, compound_ft_file, target_ft_file=None):
             [f"prot_ft_{i}" for i in range(targets.shape[1]-1)]
         features = features[features["assay_chembl_id"].isin(
             targets["assay_chembl_id"])]
-
-        # scale protein feature vectors based on train data
-        scaler = MinMaxScaler()
-        targets.iloc[:, 1:] = scaler.fit_transform(targets.iloc[:, 1:])
-        targets.iloc[:, 1:] = scaler.transform(targets.iloc[:, 1:])
         features = features.merge(targets, on="assay_chembl_id")
 
     features.to_csv("features.csv", index=False)
@@ -42,6 +37,12 @@ def PCM_model(input):
     X_train = X_train.iloc[:, 3:]
     X_test = X_test.iloc[:, 3:]
 
+    if "prot_ft_0" in X_train.columns: # if we use protein features
+        prot_cols = [col for col in X_train.columns if col.startswith("prot_ft")]
+        scaler = MinMaxScaler()
+        X_train[prot_cols] = scaler.fit_transform(X_train[prot_cols])
+        X_test[prot_cols] = scaler.transform(X_test[prot_cols])
+
     reg = RandomForestRegressor(
         n_estimators=100, max_features=0.3, random_state=0)
     reg.fit(X_train, y_train)
@@ -49,11 +50,10 @@ def PCM_model(input):
     res["predicted"] = test_pred
 
     med_cor_test_pred = test_pred + np.median(y_train) - np.median(test_pred)
-
     rmse_test = round(rmse(y_test, test_pred), 2)
-    med_cor_rmse_test = round(rmse(y_test, med_cor_test_pred), 2) # do poprawienia w score_metrics.py albo do wyrzucenia
+    med_cor_rmse_test = round(rmse(y_test, med_cor_test_pred), 2)
     spearman_test = round(spearman(y_test, test_pred), 2)
-    multiclass_mcc_test = round(multiclass_mcc(y_test, test_pred), 2)
+    multiclass_mcc_test = round(multiclass_mcc(y_test, test_pred), 2) # do poprawienia w score_metrics.py albo do wyrzucenia
     mcc_test = round(mcc(y_test.values, test_pred, np.median(y_train)), 2)
     med_cor_mcc_test = round(
         mcc(y_test.values, med_cor_test_pred, np.median(y_train)), 2)
