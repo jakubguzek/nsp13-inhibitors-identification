@@ -22,7 +22,7 @@ def insert_ids(sdf_in, ids, sdf_out=None):
     with open(sdf_in,"r") as f:
         for line in f:
             if block_start: 
-                file_out.write(ids.pop(0))
+                file_out.write(ids.pop(0)+"\n")
                 block_start = False
             else:
                 file_out.write(line)
