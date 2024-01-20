@@ -1,10 +1,7 @@
 import pathlib
-import re
 import sys
 
 import pandas as pd
-
-SCRIPT_NAME = pathlib.Path(__file__).name
 
 
 def get_nsp13_chembl_assay_ids(
