@@ -10,9 +10,20 @@ SCRIPT_NAME = pathlib.Path(__file__).name
 def get_nsp13_chembl_assay_ids(
     assays_metadata_path: pathlib.Path, pattern: str
 ) -> list[str]:
+    """Returns a list of ids of assays whose description matches pattern.
+
+    args:
+        - assays_metadata_path: path to csv file with assay metadata, including
+          the `assay_description` column.
+        - pattern against which assay description will be matched.
+
+    returns:
+        list of assay ids as strings.
+    """
     assays = pd.read_csv(assays_metadata_path, index_col=0)
     nsp13_assays = assays[assays.assay_description.str.contains(pattern, case=False)]
-    return nsp13_assays.index.tolist() # type: ignore
+    return nsp13_assays.index.tolist()  # type: ignore
+
 
 def main() -> int:
     assays_metadata_path = pathlib.Path("./activities_targets/assays_targets.csv")
@@ -26,7 +37,6 @@ def main() -> int:
         for assay_id in ids:
             lines = [f">{assay_id}\n"] + nsp13_sequence_lines
             output.writelines(lines)
-
     return 0
 
 
