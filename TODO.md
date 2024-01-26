@@ -1,6 +1,7 @@
 ## To Do
 
 - [ ] Spisanie co każdy do tej pory zrobił, w miarę jak najbardziej szczegółowo
+- [ ] Zapytać/zweryfikować jak się przelicza docking-score na IC50
 
 ### Tasks
 - [ ] Dołączenie danych z dokowania do pozostałych danych
