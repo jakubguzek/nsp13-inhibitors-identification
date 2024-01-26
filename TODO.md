@@ -12,6 +12,7 @@
 - [ ] Napisanie skryptu, który policzy przy pomocy najlepszego uzyskanego modelu score'y dla ligandów z chmbl
 - [ ] Zrobienie jakiegoś ładnego podsumowania/wizualizacji score'ów po-treningowych dla wszystkich modeli
 - [ ] Zrobienie/Pobranie jakiejś wizualizacji łącznych statystyk ligandów z Chembl 
+- [ ] Sprawdzić reguły Lipińskiego
 
 ### Opcjonalne 
 - [ ] Dopisanie kolejnego modelu (XGboost/Jakiś perceptron)
