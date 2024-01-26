@@ -13,18 +13,25 @@ SCRIPT_NAME = pathlib.Path(__file__).name
 BASE_URL = "https://www.ebi.ac.uk"
 DATA_ENDPOINT = f"{BASE_URL}/chembl/api/data"
 
+COMMANDS = ["assays", "compounds"]
+
 
 def yellow_text(text: str) -> str:
-    return f"\033[33m{text}\033[0m"
+    return f"\033[33m{text}\033[0m"  # ]]
 
 
 def red_text(text: str) -> str:
-    return f"\033[31m{text}\033[0m"
+    return f"\033[31m{text}\033[0m"  # ]]
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        "A script for downloading bioactivity assay data from ChEMBL"
+        description="A script for downloading bioactivity assay data from ChEMBL"
+    )
+    parser.add_argument(
+        "command",
+        type=str,
+        help=f"command specyfing what to fetch (possible values: {', '.join(COMMANDS)})",
     )
     parser.add_argument(
         "-o",
@@ -111,9 +118,35 @@ def get_activities(assays_ids: List[str]):
     return pd.concat(frames, ignore_index=True)
 
 
-def main() -> int:
-    args = parse_args()
+def get_compounds(batch_size: int = 1000):
+    url = fetch_url("molecule", limit=1000)
+    response = requests.get(url)
+    to_df = lambda r: pd.DataFrame(
+        {mol["molecule_chembl_id"]: mol["molecule_properties"] for mol in r["molecules"]}
+    ).transpose()
+    frames = []
+    response_body = response.json()
+    df = to_df(response_body)
+    frames.append(df)
+    next_page = response_body["page_meta"]["next"]
+    total_batches = response_body["page_meta"]["total_count"] // batch_size + 1
+    i = 1
+    percent_done = 1 * 100 // total_batches
+    while next_page is not None:
+        print(
+            f"\033[2K\033[32m {'━' * int(percent_done * 0.8)}\033[31m{'━' * int((100 - percent_done) * 0.8)} "  # ]]]
+            f"\033[0m{i}/{total_batches}",  # ]
+            end="\r",
+            flush=True,
+        )
+        next_page_body = requests.get(f"https://www.ebi.ac.uk{next_page}").json()
+        frames.append(to_df(next_page_body))
+        nest_page = response_body["page_meta"]["next"]
+        i += 1
+    return pd.concat(frames, ignore_index=True)
 
+
+def fetch_assays(args: argparse.Namespace) -> int:
     assays = get_asssays()
     activities = get_activities(assays["assay_chembl_id"])
 
@@ -137,6 +170,46 @@ def main() -> int:
 
     print(activities.to_csv())
     return 0
+
+
+def fetch_compounds(args: argparse.Namespace) -> int:
+    compounds = get_compounds()
+
+    if args.output:
+        output_file = pathlib.Path(args.output)
+
+        if output_file.is_dir():
+            print(f"{red_text(SCRIPT_NAME)}: error: {output_file} is a directory.")
+            return 1
+        if (not args.force) and output_file.exists():
+            print(f"[{yellow_text('warning')}] File {output_file} exists.", end=" ")
+            choice = input("Do you want to overwrite it? [Y/n]: ")
+
+            if choice.lower() not in ["y", "yes"]:
+                print(compounds.to_csv())
+                return 0
+
+        with open(output_file, "w") as file:
+            file.write(compounds.to_csv())
+        return 0
+
+    print(compounds.to_csv())
+    return 0
+
+
+def main() -> int:
+    args = parse_args()
+
+    if args.command.lower() == "assays":
+        return fetch_assays(args)
+
+    if args.command.lower() == "compounds":
+        return fetch_compounds(args)
+
+    print(
+        f"{red_text(SCRIPT_NAME)}: error: command must be one of: \033[1m{', '.join(COMMANDS)}\033[0m"
+    )
+    return 2
 
 
 if __name__ == "__main__":
