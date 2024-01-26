@@ -131,7 +131,7 @@ def get_compounds(batch_size: int = 1000):
     next_page = response_body["page_meta"]["next"]
     total_batches = response_body["page_meta"]["total_count"] // batch_size + 1
     i = 1
-    percent_done = 1 * 100 // total_batches
+    percent_done = i * 100 // total_batches
     while next_page is not None:
         print(
             f"\033[2K\033[32m {'━' * int(percent_done * 0.8)}\033[31m{'━' * int((100 - percent_done) * 0.8)} "  # ]]]
@@ -143,6 +143,7 @@ def get_compounds(batch_size: int = 1000):
         frames.append(to_df(next_page_body))
         nest_page = response_body["page_meta"]["next"]
         i += 1
+        percent_done = i * 100 // total_batches
     return pd.concat(frames, ignore_index=True)
 
 
