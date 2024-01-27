@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 """script for fetching data from ChEMBL."""
 import argparse
+import datetime
 import pathlib
 import sys
-from typing import Any, List, Optional
+from typing import Any, List, Optional, Union
 
 import requests
 import pandas as pd
@@ -59,7 +60,7 @@ def next_page(response_body: dict[str, Any]) -> Optional[str]:
     return response_body["page_meta"]["next"]
 
 
-def get_viruses_ids(batch_size: int = 500) -> List[str | int]:
+def get_viruses_ids(batch_size: int = 500) -> List[Union[str, int]]:
     url = fetch_url("organism", limit=f"{batch_size}", l1="Viruses")
     ids = []
     response = requests.get(url)
@@ -120,13 +121,25 @@ def get_activities(assays_ids: List[str]):
 
 def get_compounds(batch_size: int = 1000):
     url = fetch_url("molecule", limit=1000)
-    response = requests.get(url)
-    to_df = lambda r: pd.DataFrame(
-        {mol["molecule_chembl_id"]: mol["molecule_properties"] for mol in r["molecules"]}
-    ).transpose()
     frames = []
+
+    response = requests.get(url)
+
+    def to_df(r: dict, offset: int) -> pd.DataFrame:
+        content = {
+            mol["molecule_chembl_id"]: mol["molecule_properties"]
+            for mol in r["molecules"]
+        }
+        try:
+            return pd.DataFrame(content).transpose()
+        except ValueError:
+            filename = f"{datetime.datetime.now()}_{__file__}_unparsed.log"
+            with open(filename, "a") as logfile:
+                logfile.write(str(content))
+        return pd.DataFrame()
+
     response_body = response.json()
-    df = to_df(response_body)
+    df = to_df(response_body, offset=0)
     frames.append(df)
     next_page = response_body["page_meta"]["next"]
     total_batches = response_body["page_meta"]["total_count"] // batch_size + 1
@@ -140,8 +153,9 @@ def get_compounds(batch_size: int = 1000):
             flush=True,
         )
         response_body = requests.get(f"https://www.ebi.ac.uk{next_page}").json()
-        frames.append(to_df(response_body))
         next_page = response_body["page_meta"]["next"]
+        offset = response_body["page_meta"]["offset"]
+        frames.append(to_df(response_body, offset))
         i += 1
         percent_done = i * 100 // total_batches
     return pd.concat(frames, ignore_index=True)
