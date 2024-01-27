@@ -132,7 +132,7 @@ def get_compounds(batch_size: int = 1000):
     total_batches = response_body["page_meta"]["total_count"] // batch_size + 1
     i = 1
     percent_done = i * 100 // total_batches
-    while next_page is not None:
+    while next_page is not None or i > total_batches:
         print(
             f"\033[2K\033[32m {'━' * int(percent_done * 0.8)}\033[31m{'━' * int((100 - percent_done) * 0.8)} "  # ]]]
             f"\033[0m{i}/{total_batches}",  # ]
