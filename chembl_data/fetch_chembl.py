@@ -60,6 +60,25 @@ def next_page(response_body: dict[str, Any]) -> Optional[str]:
     return response_body["page_meta"]["next"]
 
 
+def to_df(r: dict, offset: int) -> pd.DataFrame:
+    content = {} 
+    for mol in r["molecules"]:
+        properties = mol["molecule_properties"]
+        structures = mol["molecule_structures"]
+        if properties is not None and structures is not None:
+            content[mol["molecule_chembl_id"]] = {
+                **properties,
+                "canonical_smiles": structures["canonical_smiles"]
+            }
+    try:
+        return pd.DataFrame(content).transpose()
+    except ValueError:
+        filename = f"{SCRIPT_NAME}_{datetime.datetime.now()}_unparsed.log"
+        with open(filename, "a") as logfile:
+            logfile.write(str({offset: content}))
+    return pd.DataFrame()
+
+
 def get_viruses_ids(batch_size: int = 500) -> List[Union[str, int]]:
     url = fetch_url("organism", limit=f"{batch_size}", l1="Viruses")
     ids = []
@@ -119,30 +138,19 @@ def get_activities(assays_ids: List[str]):
     return pd.concat(frames, ignore_index=True)
 
 
-def get_compounds(batch_size: int = 1000):
+def get_compounds(batch_size: int = 1000, output_filename: str = "ligands"):
     url = fetch_url("molecule", limit=1000)
     frames = []
 
     response = requests.get(url)
-
-    def to_df(r: dict, offset: int) -> pd.DataFrame:
-        content = {
-            mol["molecule_chembl_id"]: mol["molecule_properties"]
-            for mol in r["molecules"]
-        }
-        try:
-            return pd.DataFrame(content).transpose()
-        except ValueError:
-            filename = f"{datetime.datetime.now()}_{__file__}_unparsed.log"
-            with open(filename, "a") as logfile:
-                logfile.write(str(content))
-        return pd.DataFrame()
-
     response_body = response.json()
-    df = to_df(response_body, offset=0)
-    frames.append(df)
+    frames.append(to_df(response_body, offset=0))
+    with open(f"{output_filename}.tmp", "w") as file:
+        file.write(frames[0].to_csv(header=True))
+
     next_page = response_body["page_meta"]["next"]
     total_batches = response_body["page_meta"]["total_count"] // batch_size + 1
+
     i = 1
     percent_done = i * 100 // total_batches
     while next_page is not None or i > total_batches:
@@ -156,6 +164,8 @@ def get_compounds(batch_size: int = 1000):
         next_page = response_body["page_meta"]["next"]
         offset = response_body["page_meta"]["offset"]
         frames.append(to_df(response_body, offset))
+        with open(f"{output_filename}.tmp", "a") as file:
+            file.write(frames[-1].to_csv(header=False))
         i += 1
         percent_done = i * 100 // total_batches
     return pd.concat(frames, ignore_index=True)
@@ -188,7 +198,10 @@ def fetch_assays(args: argparse.Namespace) -> int:
 
 
 def fetch_compounds(args: argparse.Namespace) -> int:
-    compounds = get_compounds()
+    if args.output:
+        compounds = get_compounds(output_filename=args.output)
+    else:
+        compounds = get_compounds()
 
     if args.output:
         output_file = pathlib.Path(args.output)
