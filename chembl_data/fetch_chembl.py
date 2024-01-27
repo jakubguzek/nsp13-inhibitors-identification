@@ -139,9 +139,9 @@ def get_compounds(batch_size: int = 1000):
             end="\r",
             flush=True,
         )
-        next_page_body = requests.get(f"https://www.ebi.ac.uk{next_page}").json()
-        frames.append(to_df(next_page_body))
-        nest_page = response_body["page_meta"]["next"]
+        response_body = requests.get(f"https://www.ebi.ac.uk{next_page}").json()
+        frames.append(to_df(response_body))
+        next_page = response_body["page_meta"]["next"]
         i += 1
         percent_done = i * 100 // total_batches
     return pd.concat(frames, ignore_index=True)
