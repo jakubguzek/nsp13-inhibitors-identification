@@ -53,7 +53,9 @@ def calculate_fingerprints(ligands: pd.DataFrame, fp_generator):
     fps = []
     for smile in ligands["canonical_smiles"]:
         mol = Chem.MolFromSmiles(smile)
-        fps.append(fp_generator.GetFingerprint(mol))
+        if mol is not None:
+            fps.append(fp_generator.GetFingerprint(mol))
+
 
     # to calculate Tanimoto similarity
     # similarity = DataStructs.TanimotoSimilarity(fps[0], fps[1])
