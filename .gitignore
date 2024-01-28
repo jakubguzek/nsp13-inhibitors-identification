@@ -6,6 +6,7 @@ __pycache__/
 # C extensions
 *.so
 chembl_data/compounds.csv
+chembl_data/compounds_with_ids.csv
 
 # Distribution / packaging
 .Python
