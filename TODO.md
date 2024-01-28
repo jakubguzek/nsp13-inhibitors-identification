@@ -1,19 +1,22 @@
 ## To Do
 
 - [ ] Spisanie co każdy do tej pory zrobił, w miarę jak najbardziej szczegółowo
-- [ ] Zapytać/zweryfikować jak się przelicza docking-score na IC50
+- [x] Zapytać/zweryfikować jak się przelicza docking-score na IC50 (grupowe)
 
 ### Tasks
-- [ ] Dołączenie danych z dokowania do pozostałych danych
+- [-] Dołączenie danych z dokowania do pozostałych danych
 - [ ] Uporządkowanie kodu
-- [ ] Zrobienie PCA i tSNE/UMAP dla embeddingów helikaz, które używamy
-- [ ] Puszczenie RF i SVR dla kompletnego zbioru danych
-- [ ] Wytrenowanie modeli, zapisanie ich statystyk i nauczonych parametrów
-- [ ] Pobranie wszystkich ligandów w chembl
+- [x] Zrobienie PCA i tSNE/UMAP dla embeddingów helikaz, które używamy (A)
+- [ ] Puszczenie RF i SVR dla danych z assayów (M)
+- [ ] Puszczenie RF i SVR dla danych z dokowania (M)
+- [ ] Wytrenowanie modeli, zapisanie ich statystyk i nauczonych parametrów (M)
+- [x] Pobranie wszystkich ligandów w chembl (Jakub)
 - [ ] Napisanie skryptu, który policzy przy pomocy najlepszego uzyskanego modelu score'y dla ligandów z chmbl
 - [ ] Zrobienie jakiegoś ładnego podsumowania/wizualizacji score'ów po-treningowych dla wszystkich modeli
-- [ ] Zrobienie/Pobranie jakiejś wizualizacji łącznych statystyk ligandów z Chembl 
-- [ ] Sprawdzić reguły Lipińskiego
+- [x] Zrobienie/Pobranie jakiejś wizualizacji łącznych statystyk ligandów z Chembl (Jakub)
+- [ ] Policzenie ECFP$ dla wszystkich ligandów z chembl (Jakub)
+- [ ] Więcej wizualizacji liganów, korzystając z dimensionality reduction ECFP4 (Jakub)
+- [x] Sprawdzić reguły Lipińskiego (grupowe)
 
 ### Opcjonalne 
 - [ ] Dopisanie kolejnego modelu (XGboost/Jakiś perceptron)
