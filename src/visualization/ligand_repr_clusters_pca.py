@@ -1,39 +1,74 @@
-# -*- coding: utf-8 -*-
+#!/usr/bin/env python
+import argparse
+import sys
+import pathlib
 
 import numpy as np
-from sklearn.decomposition import PCA
-import matplotlib.pyplot as plt
 import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
 
-X = pd.read_csv('ligands_ecfp4.csv')
+from utils.utils import red_text
 
-clusters = open('dice_07.txt', "r")
-clust_dict = {}
-for el in clusters:
-  line = el.split()
-  clust_dict[line[0]]=int(line[1])
-clusters.close()
+SCRIPT_NAME = pathlib.Path(__file__).name
 
-X['cluster'] = None
+COLORS = [
+    "#1f77b4",
+    "#ff7f0e",
+    "#2ca02c",
+    "#d62728",
+    "#9467bd",
+    "#8c564b",
+    "#e377c2",
+    "#7f7f7f",
+    "#bcbd22",
+    "#17becf",
+    "#1f78b4",
+    "#ffbb78",
+]
 
-for index, row in X.iterrows():
-    id_value = row['molecule_chembl_id']
-    X.at[index, 'cluster'] = clust_dict[id_value]
 
-_, ax = plt.subplots(figsize=(10,10))
-pca = PCA(n_components=2)
-x_new = pca.fit_transform(X.drop(columns=['molecule_chembl_id', 'cluster']))
-np.random.seed(11)
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("input_file", type=str, help="csv file with ligand embeddings.")
+    return parser.parse_args()
 
-x_new = pd.DataFrame(x_new, columns=['PCA1', 'PCA2'])
-x_new['molecule_chembl_id'] = X['molecule_chembl_id']
-x_new['cluster']= X['cluster']
-colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b',
-          '#e377c2', '#7f7f7f', '#bcbd22', '#17becf', '#1f78b4', '#ffbb78']
-cl_colors = {}
-for i in range(1,13):
-  cl_colors[i]=colors[i-1]
-plt.scatter(x_new['PCA1'], x_new['PCA2'], c=x_new['cluster'].map(cl_colors), alpha=0.7)
-plt.xlabel('PC1')
-plt.ylabel('PC2')
-plt.show()
+
+def main() -> int:
+    args = parse_args()
+
+    input_file = pathlib.Path(args.input_file)
+
+    if not input_file.exists():
+        print(
+            f"{red_text(SCRIPT_NAME)}: {red_text('error')}: {input_file} No such file or directory!"
+        )
+        return 1
+    if input_file.is_dir():
+        print(f"{red_text(SCRIPT_NAME)}: error: {input_file} is a directory.")
+        return 1
+
+    np.random.seed(11)
+    X = pd.read_csv(input_file, index_col=-1)
+    clusters = pd.read_csv("./data/processed/clusters.tsv", sep="\t", index_col=0)
+
+    X = pd.merge(X, clusters, left_index=True, right_index=True)
+
+    _, ax = plt.subplots(figsize=(10, 10))
+    pca = PCA(n_components=2)
+    x_new = pca.fit_transform(X.drop(columns=["cluster"]).values)
+
+    x_new = pd.DataFrame(x_new, columns=["PCA1", "PCA2"], index=X.index)
+    x_new["cluster"] = X["cluster"]
+    cl_colors = {i: COLORS[i-1] for i in range(1,13)}
+    plt.scatter(
+        x_new["PCA1"], x_new["PCA2"], c=x_new["cluster"].map(cl_colors), alpha=0.7
+    )
+    plt.xlabel("PC1", fontdict={"fontsize": 18})
+    plt.ylabel("PC2", fontdict={"fontsize": 18})
+    plt.show()
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
