@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import argparse
 import pathlib
 import pickle
@@ -8,9 +9,9 @@ from typing import Any, Protocol
 import pandas as pd
 import numpy as np
 
-from utils.utils import yellow_text, red_text
+from utils.utils import red_text
 
-SCRIPR_NAME = pathlib.Path(__file__).name
+SCRIPT_NAME = pathlib.Path(__file__).name
 NSP13_CHEMBL_ID: str = "CHEMBL4523582"
 STEP = 10_000
 
@@ -36,20 +37,17 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "target_features", type=str, help="path to csv file with target features"
     )
+    parser.add_argument("model", type=str, help="path to pickled model")
     parser.add_argument(
-        "model", type=str, help="path to pickled model"
+        "output",
+        type=str,
+        help="path to file, to which predicted values will be written",
     )
     parser.add_argument(
         "--target-chembl-id",
         type=str,
         default=NSP13_CHEMBL_ID,
         help="ChEMBL id of the target",
-    )
-    parser.add_argument(
-        "-o",
-        "--output",
-        type=str,
-        help="path to file, to which predicted values will be written",
     )
     parser.add_argument(
         "--force",
@@ -65,12 +63,12 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def get_target_feaetures_df(filepath: FilePath, target_id) -> pd.DataFrame:
+def get_target_feaetures_df(filepath: FilePath, target_id: str, n_samples: int) -> pd.DataFrame:
     target_features = pd.read_csv(filepath, header=None, index_col=0)
     target_features = target_features[target_features.index == target_id]
     if target_features.empty:
         raise TargetNoFoundError(f"No such id in target features: {target_id}")
-    return target_features
+    return pd.concat([target_features for _ in range(n_samples)]).reset_index().drop(0, axis=1)
 
 
 def get_ligand_features_df(filepath: FilePath, start: int, step: int) -> pd.DataFrame:
@@ -96,25 +94,32 @@ def main() -> int:
     ligand_features_path = pathlib.Path(args.ligand_features)
     target_features_path = pathlib.Path(args.target_features)
     model_path = pathlib.Path(args.model)
+    output_file = pathlib.Path(args.output)
     if not ligand_features_path.exists():
         print(
-            f"{red_text(SCRIPR_NAME)}: {red_text('error')}: {ligand_features_path} No such file or directory!"
+            f"{red_text(SCRIPT_NAME)}: {red_text('error')}: {ligand_features_path} No such file or directory!"
         )
         return 1
     if not target_features_path.exists():
         print(
-            f"{red_text(SCRIPR_NAME)}: {red_text('error')}: {target_features_path} No such file or directory!"
+            f"{red_text(SCRIPT_NAME)}: {red_text('error')}: {target_features_path} No such file or directory!"
         )
         return 1
     if not model_path.exists():
         print(
-            f"{red_text(SCRIPR_NAME)}: {red_text('error')}: {model_path} No such file or directory!"
+            f"{red_text(SCRIPT_NAME)}: {red_text('error')}: {model_path} No such file or directory!"
         )
+        return 1
+    if output_file.is_dir():
+        print(f"{red_text(SCRIPT_NAME)}: error: {output_file} is a directory.")
+        return 1
+    if (not args.force) and output_file.exists():
+        print(f"[{red_text('error')}] File {output_file} exists.")
         return 1
 
     try:
         target_features = get_target_feaetures_df(
-            target_features_path, args.target_chembl_id
+            target_features_path, args.target_chembl_id, args.step
         )
     except TargetNoFoundError as e:
         print(e)
@@ -122,11 +127,25 @@ def main() -> int:
 
     model = load_model(model_path)
 
-    length = int(subprocess.run(["wc", "-l", str(ligand_features_path.resolve())], capture_output=True).stdout.decode().split()[0])
-    for i in range(0, length, args.step):
-        ligand_features = get_ligand_features_df(ligand_features_path, i, step=args.step)
-        features = create_features_df(ligand_features, target_features, model)
+    length = int(
+        subprocess.run(
+            ["wc", "-l", str(ligand_features_path.resolve())], capture_output=True
+        )
+        .stdout.decode()
+        .split()[0]
+    )
 
+    # Clear output file, before appending to it in the next steps.
+    open(output_file, "w").close()
+
+    with open(output_file, "a") as file:
+        for i in range(0, length, args.step):
+            ligand_features = get_ligand_features_df(
+                ligand_features_path, i, step=args.step
+            )
+            features = create_features_df(ligand_features, target_features, model)
+            predicted = pd.DataFrame(model.predict(features), index=features.index)
+            predicted.to_csv(file, header=False)
 
     return 0
 
