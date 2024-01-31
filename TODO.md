@@ -5,7 +5,7 @@
 
 ### Tasks
 - [-] Dołączenie danych z dokowania do pozostałych danych
-- [ ] Uporządkowanie kodu
+- [ ] Uporządkowanie kodu (Jakub)
 - [x] Zrobienie PCA i tSNE/UMAP dla embeddingów helikaz, które używamy (A)
 - [x] Puszczenie RF i SVR dla danych z assayów (M)
 - [x] Puszczenie RF i SVR dla danych z dokowania (M)
