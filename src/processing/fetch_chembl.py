@@ -17,14 +17,6 @@ DATA_ENDPOINT = f"{BASE_URL}/chembl/api/data"
 COMMANDS = ["assays", "compounds"]
 
 
-def yellow_text(text: str) -> str:
-    return f"\033[33m{text}\033[0m"  # ]]
-
-
-def red_text(text: str) -> str:
-    return f"\033[31m{text}\033[0m"  # ]]
-
-
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="A script for downloading bioactivity assay data from ChEMBL"
