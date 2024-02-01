@@ -5,17 +5,17 @@
 
 ### Tasks
 - [-] Dołączenie danych z dokowania do pozostałych danych
-- [ ] Uporządkowanie kodu
+- [ ] Uporządkowanie kodu (Jakub)
 - [x] Zrobienie PCA i tSNE/UMAP dla embeddingów helikaz, które używamy (A)
-- [ ] Puszczenie RF i SVR dla danych z assayów (M)
-- [ ] Puszczenie RF i SVR dla danych z dokowania (M)
-- [ ] Wytrenowanie modeli, zapisanie ich statystyk i nauczonych parametrów (M)
+- [x] Puszczenie RF i SVR dla danych z assayów (M)
+- [x] Puszczenie RF i SVR dla danych z dokowania (M)
+- [x] Wytrenowanie modeli, zapisanie ich statystyk i nauczonych parametrów (M)
 - [x] Pobranie wszystkich ligandów w chembl (Jakub)
-- [ ] Napisanie skryptu, który policzy przy pomocy najlepszego uzyskanego modelu score'y dla ligandów z chmbl
-- [ ] Zrobienie jakiegoś ładnego podsumowania/wizualizacji score'ów po-treningowych dla wszystkich modeli
+- [x] Napisanie skryptu, który policzy przy pomocy najlepszego uzyskanego modelu score'y dla ligandów z chmbl
+- [x] Zrobienie jakiegoś ładnego podsumowania/wizualizacji score'ów po-treningowych dla wszystkich modeli
 - [x] Zrobienie/Pobranie jakiejś wizualizacji łącznych statystyk ligandów z Chembl (Jakub)
-- [ ] Policzenie ECFP$ dla wszystkich ligandów z chembl (Jakub)
-- [ ] Więcej wizualizacji liganów, korzystając z dimensionality reduction ECFP4 (Jakub)
+- [x] Policzenie ECFP$ dla wszystkich ligandów z chembl (Jakub)
+- [x] Więcej wizualizacji liganów, korzystając z dimensionality reduction ECFP4 (Jakub)
 - [x] Sprawdzić reguły Lipińskiego (grupowe)
 
 ### Opcjonalne 
