@@ -31,6 +31,7 @@ COLORS = [
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("input_file", type=str, help="csv file with ligand embeddings.")
+    parser.add_argument("cluster_file", type=str, help="csv file with ligand clusters.")
     return parser.parse_args()
 
 
@@ -38,6 +39,7 @@ def main() -> int:
     args = parse_args()
 
     input_file = pathlib.Path(args.input_file)
+    cluster_file = pathlib.Path(args.cluster_file)
 
     if not input_file.exists():
         print(
@@ -47,10 +49,18 @@ def main() -> int:
     if input_file.is_dir():
         print(f"{red_text(SCRIPT_NAME)}: error: {input_file} is a directory.")
         return 1
+    if not cluster_file.exists():
+        print(
+            f"{red_text(SCRIPT_NAME)}: {red_text('error')}: {cluster_file} No such file or directory!"
+        )
+        return 1
+    if cluster_file.is_dir():
+        print(f"{red_text(SCRIPT_NAME)}: error: {cluster_file} is a directory.")
+        return 1
 
     np.random.seed(11)
     X = pd.read_csv(input_file, index_col=-1)
-    clusters = pd.read_csv("./data/processed/clusters.tsv", sep="\t", index_col=0)
+    clusters = pd.read_csv(cluster_file, index_col=0)
 
     X = pd.merge(X, clusters, left_index=True, right_index=True)
 
