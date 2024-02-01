@@ -31,7 +31,7 @@ def insert_ids(sdf_in, ids, sdf_out=None):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("sdf", help="sdf file from chembl download")
+    parser.add_argument("sdf", type=str, help="sdf file from chembl download")
     parser.add_argument("-o", "--out-file", dest="out_file", help="output sdf (with ids) name")
     args = parser.parse_args()
 
